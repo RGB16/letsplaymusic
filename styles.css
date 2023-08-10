@@ -1,6 +1,6 @@
 body {
   text-align: center;
-  background-color: #283149;
+  background-color: rgb(77, 191, 170);
 }
 
 h1 {
@@ -17,7 +17,7 @@ footer {
 }
 
 .w {
-    background-image:url("images/tom1.png;");
+    background-image:url("images/tom1.png");
 }
 
 .a {
