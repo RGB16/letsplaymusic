@@ -1,24 +1,27 @@
-
-var numofDrumButtons=document.querySelectorAll(".drum").length;
-
-
+//by clicking on the button
+var numofDrumButtons=document.querySelectorAll(".drum").length;//to find the length of total number of button
 for( var i=0;i<numofDrumButtons;i++){
-
     document.querySelectorAll(".drum")[i].addEventListener("click",function handleclick(){
-
-
     var buttoninnerhtml=this.innerHTML;
 
-    makesound(buttoninnerhtml);//function call
+
+    makesound(buttoninnerhtml);// function call
+    buttonanimation(buttoninnerhtml);
      
     });
 }
 
 
 
+
+
+//for w a s d j k l keypress happen
 document.addEventListener("keydown",function(event){
-    makesound(event.key);
-});
+                makesound(event.key);//function call
+                buttonanimation(event.key);
+                        });
+        
+
 
 
 
@@ -63,6 +66,14 @@ function makesound(key){
 
 
 
+function buttonanimation(currkey){
+    var activebutton=document.querySelector("."+currkey);//it selects the current key pressed
 
+    activebutton.classList.add("pressed");
+    
+    setTimeout(function() {
+        activebutton.classList.remove("pressed");
+        
+    }, 100);
 
-
+}
